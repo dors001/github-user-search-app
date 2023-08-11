@@ -1,11 +1,12 @@
 import { Box, Flex, Grid, GridItem, Show, Text } from "@chakra-ui/react";
 import "./App.css";
+import Header from "./Components/Header";
 
 function App() {
   return (
     <>
       <Flex direction="column">
-        <Box backgroundColor="orange">header</Box>
+        <Header />
         <Box backgroundColor="pink">search bar</Box>
         <Box id="content">
           <Grid

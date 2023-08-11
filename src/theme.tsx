@@ -2,6 +2,7 @@ import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
+  useSystemColorMode: false,
 };
 
 const theme = extendTheme({
@@ -10,10 +11,8 @@ const theme = extendTheme({
     global: {
       "html, body": {
         fontSize: "62.5%",
+        fontFamily: "Space Mono",
       },
-    },
-    fonts: {
-
     },
   },
 });
