@@ -27,7 +27,6 @@ function App() {
       >
         <Header />
         <SearchBar />
-        {/* <Box backgroundColor="pink">search bar</Box> */}
         <Box id="content">
           <Grid
             templateAreas={`"avatar user-info"

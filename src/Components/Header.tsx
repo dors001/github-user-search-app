@@ -1,11 +1,4 @@
-import {
-  Image,
-  Button,
-  Flex,
-  Heading,
-  useColorMode,
-  HStack,
-} from "@chakra-ui/react";
+import { Image, Button, Heading, useColorMode, HStack } from "@chakra-ui/react";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
