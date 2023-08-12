@@ -1,19 +1,39 @@
-import { Box, Flex, Grid, GridItem, Show, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Show,
+  Text,
+  VStack,
+  useColorMode,
+} from "@chakra-ui/react";
 import "./App.css";
+import theme from "./theme";
 import Header from "./Components/Header";
+import SearchBar from "./Components/SearchBar";
 
 function App() {
+  const colorMode = useColorMode().colorMode;
+
   return (
     <>
-      <Flex direction="column">
+      <VStack
+        padding="2rem"
+        backgroundColor={
+          colorMode === "dark"
+            ? theme.colors.brands.darkColor
+            : theme.colors.brands.lightColor
+        }
+      >
         <Header />
-        <Box backgroundColor="pink">search bar</Box>
+        <SearchBar />
+        {/* <Box backgroundColor="pink">search bar</Box> */}
         <Box id="content">
           <Grid
             templateAreas={`"avatar user-info"
-            "summary summary"
-            "dashboard dashboard"
-            "socials socials"`}
+              "summary summary"
+              "dashboard dashboard"
+              "socials socials"`}
             templateRows={"1fr 1fr 1fr 1fr"}
             templateColumns={"0.3fr 0.7fr"}
             gap={4}
@@ -74,7 +94,7 @@ function App() {
             </Show>
           </Grid>
         </Box>
-      </Flex>
+      </VStack>
     </>
   );
 }

@@ -1,4 +1,11 @@
-import { Image, Button, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import {
+  Image,
+  Button,
+  Flex,
+  Heading,
+  useColorMode,
+  HStack,
+} from "@chakra-ui/react";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -9,7 +16,12 @@ const Header = () => {
 
   return (
     <>
-      <Flex margin="2rem" justifyContent="space-between">
+      <HStack
+        w="100%"
+        margin="2rem"
+        justifyContent="space-between"
+        maxW="730px"
+      >
         <Heading
           as="h1"
           fontSize="2.6rem"
@@ -19,12 +31,15 @@ const Header = () => {
           devfinder
         </Heading>
         <Button
+          marginTop="0.5rem"
           variant="ghost"
           color={colorMode === "light" ? "#697c9a" : "white"}
           fontSize="1.3rem"
           fontWeight="bold"
-          placeSelf="center"
           onClick={switchColorMode}
+          _hover={{
+            color: colorMode === "light" ? "#d5d8e0" : "#aac1e3",
+          }}
           sx={{
             ":focus": {
               backgroundColor: "transparent",
@@ -42,7 +57,7 @@ const Header = () => {
         >
           {colorMode === "light" ? "DARK" : "LIGHT"}
         </Button>
-      </Flex>
+      </HStack>
     </>
   );
 };
