@@ -11,6 +11,7 @@ import "./App.css";
 import theme from "./theme";
 import Header from "./Components/Header";
 import SearchBar from "./Components/SearchBar";
+import UserInformationContainer from "./Components/UserInformationContainer";
 
 function App() {
   const colorMode = useColorMode().colorMode;
@@ -27,7 +28,7 @@ function App() {
       >
         <Header />
         <SearchBar />
-        <Box id="content">
+        <UserInformationContainer>
           <Grid
             templateAreas={`"avatar user-info"
               "summary summary"
@@ -39,12 +40,12 @@ function App() {
           >
             <Show breakpoint="(max-width: 1023px)">
               <GridItem area={"avatar"}>
-                <Box backgroundColor="red">Avatar</Box>
+                <Box>Avatar</Box>
               </GridItem>
-              <GridItem area={"user-info"} backgroundColor="blue">
+              <GridItem area={"user-info"}>
                 <Box>user info</Box>
               </GridItem>
-              <GridItem area={"summary"} backgroundColor="yellow">
+              <GridItem area={"summary"}>
                 <Text>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Voluptatum dolores obcaecati blanditiis nobis hic est maxime
@@ -52,25 +53,25 @@ function App() {
                 </Text>
               </GridItem>
               <GridItem area={"dashboard"}>
-                <Box backgroundColor="purple">Dashboard</Box>
+                <Box>Dashboard</Box>
               </GridItem>
             </Show>
             <Show breakpoint="(max-width: 767px)">
               <GridItem area={"socials"}>
-                <Box backgroundColor="green">twitter</Box>
-                <Box backgroundColor="green">facebook</Box>
-                <Box backgroundColor="green">github</Box>
-                <Box backgroundColor="green">location</Box>
+                <Box>twitter</Box>
+                <Box>facebook</Box>
+                <Box>github</Box>
+                <Box>location</Box>
               </GridItem>
             </Show>
             <Show breakpoint="(min-width: 1024px)">
               <GridItem area={"avatar"}>
-                <Box backgroundColor="red">Avatar</Box>
+                <Box>Avatar</Box>
               </GridItem>
-              <GridItem area={"user-info"} backgroundColor="blue">
+              <GridItem area={"user-info"}>
                 <Box>user info</Box>
               </GridItem>
-              <GridItem area={"summary"} backgroundColor="yellow" colStart={2}>
+              <GridItem area={"summary"} colStart={2}>
                 <Text>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Voluptatum dolores obcaecati blanditiis nobis hic est maxime
@@ -78,21 +79,21 @@ function App() {
                 </Text>
               </GridItem>
               <GridItem area={"dashboard"} colStart={2}>
-                <Box backgroundColor="purple">Dashboard</Box>
+                <Box>Dashboard</Box>
               </GridItem>
             </Show>
             <Show breakpoint="(min-width: 768px)">
               <GridItem area={"socials"}>
-                <Box backgroundColor="green">twitter</Box>
-                <Box backgroundColor="green">facebook</Box>
+                <Box>twitter</Box>
+                <Box>facebook</Box>
                 <Box float="right">
-                  <Box backgroundColor="green">github</Box>
-                  <Box backgroundColor="green">location</Box>
+                  <Box>github</Box>
+                  <Box>location</Box>
                 </Box>
               </GridItem>
             </Show>
           </Grid>
-        </Box>
+        </UserInformationContainer>
       </VStack>
     </>
   );
