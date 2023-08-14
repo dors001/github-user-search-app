@@ -1,18 +1,52 @@
+import { useState } from "react";
+import apiClient from "../services/api-client";
 import { InputGroup, Flex, Spacer } from "@chakra-ui/react";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 
-//TODO: Add error when user was not found
 //TODO: clear search bar after click
 
-const SearchBar = () => {
+export interface User {
+  id: number;
+  login: string;
+  avatar_url: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  bio: string;
+  twitter_username: string;
+  public_repos: string;
+  followers: number;
+  following: number;
+  created_at: string;
+}
+
+interface Props {
+  setUser: (user: User) => void;
+}
+
+const SearchBar = ({ setUser }: Props) => {
+  const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+
+  const getUser = async () => {
+    apiClient
+      .get<User>(username)
+      .then((response) => {
+        setUser(response.data);
+        setUsername("");
+      })
+      .catch(() => setError(error));
+  };
+
   return (
     <>
       <Flex w="100%" maxW="730px" maxH="70px" margin="1.5rem">
         <InputGroup>
-          <InputComponent />
+          <InputComponent setUsername={setUsername} username={username}/>
           <Spacer />
-            <ButtonComponent />
+          <ButtonComponent getUser={getUser} />
         </InputGroup>
       </Flex>
     </>

@@ -1,8 +1,10 @@
 import { Button, InputRightElement, Show } from "@chakra-ui/react";
 
-//TODO: Add onClick handler
+interface Props {
+  getUser: () => void;
+}
 
-const ButtonComponent = () => {
+const ButtonComponent = ({ getUser }: Props) => {
   return (
     <>
       <Show breakpoint="(max-width: 767px)">
@@ -11,12 +13,16 @@ const ButtonComponent = () => {
             h="45px"
             w="84px"
             _hover={{ backgroundColor: "#60ABFF" }}
+            _active={{
+              transform: "scale(0.98)",
+              backgroundColor: "#457cba",
+            }}
             variant="solid"
             color="white"
             backgroundColor="#0079ff"
             borderRadius="15px"
             fontSize="1.3rem"
-            onClick={() => console.log("clicked")}
+            onClick={() => getUser()}
           >
             Search
           </Button>
@@ -28,12 +34,16 @@ const ButtonComponent = () => {
             h="50px"
             w="106px"
             _hover={{ backgroundColor: "#60ABFF" }}
+            _active={{
+              transform: "scale(0.98)",
+              backgroundColor: "#457cba",
+            }}
             variant="solid"
             color="white"
             backgroundColor="#0079ff"
             borderRadius="15px"
             fontSize="1.3rem"
-            onClick={() => console.log("clicked")}
+            onClick={() => getUser()}
           >
             Search
           </Button>

@@ -7,7 +7,12 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
-const InputComponent = () => {
+interface Props {
+  setUsername: (value: string) => void;
+  username: string;
+}
+
+const InputComponent = ({ setUsername, username }: Props) => {
   const colorMode = useColorMode().colorMode;
 
   return (
@@ -31,6 +36,8 @@ const InputComponent = () => {
             }}
             fontSize="1.3rem"
             fontWeight="400"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </InputGroup>
       </Show>
@@ -53,6 +60,7 @@ const InputComponent = () => {
             }}
             fontSize="1.8rem"
             fontWeight="400"
+            onChange={(e) => setUsername(e.target.value)}
           />
         </InputGroup>
       </Show>
