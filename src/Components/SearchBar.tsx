@@ -1,6 +1,6 @@
 import { useState } from "react";
 import apiClient from "../services/api-client";
-import { InputGroup, Flex, Spacer, Text } from "@chakra-ui/react";
+import { InputGroup, Flex, Spacer } from "@chakra-ui/react";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 
