@@ -1,6 +1,6 @@
 import { useState } from "react";
 import apiClient from "../services/api-client";
-import { InputGroup, Flex, Spacer } from "@chakra-ui/react";
+import { InputGroup, Flex, Spacer, Text } from "@chakra-ui/react";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 
@@ -34,8 +34,12 @@ const SearchBar = ({ setUser }: Props) => {
       .then((response) => {
         setUser(response.data);
         setUsername("");
+        setError("");
       })
-      .catch(() => setError(error));
+      .catch(function () {
+        setUsername("");
+        setError("No results");
+      });
   };
 
   return (
@@ -46,6 +50,7 @@ const SearchBar = ({ setUser }: Props) => {
             setUsername={setUsername}
             username={username}
             getUser={getUser}
+            error={error}
           />
           <Spacer />
           <ButtonComponent getUser={getUser} />

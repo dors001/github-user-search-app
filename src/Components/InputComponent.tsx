@@ -11,10 +11,19 @@ interface Props {
   username: string;
   setUsername: (value: string) => void;
   getUser: () => void;
+  error: string;
 }
 
-const InputComponent = ({ username, setUsername, getUser }: Props) => {
+const InputComponent = ({ username, setUsername, getUser, error }: Props) => {
   const colorMode = useColorMode().colorMode;
+  const placeholderColor = function () {
+    if (!error) {
+      var colorTheme = colorMode === "light" ? "#4B6A9B" : "white";
+      return colorTheme;
+    }
+
+    return "red";
+  };
 
   return (
     <>
@@ -30,9 +39,9 @@ const InputComponent = ({ username, setUsername, getUser }: Props) => {
             variant="filled"
             backgroundColor={colorMode === "light" ? "#fefefe" : "#1e2a47"}
             color={colorMode === "light" ? "#4B6A9B" : "white"}
-            placeholder="Search GitHub username..."
+            placeholder={error ? error : "Search GitHub username..."}
             _placeholder={{
-              color: colorMode === "light" ? "#697c9a" : "white",
+              color: placeholderColor,
               fontWeight: "400",
             }}
             fontSize="1.3rem"
@@ -57,9 +66,9 @@ const InputComponent = ({ username, setUsername, getUser }: Props) => {
             variant="filled"
             backgroundColor={colorMode === "light" ? "#fefefe" : "#1e2a47"}
             color={colorMode === "light" ? "#4B6A9B" : "white"}
-            placeholder="Search GitHub username..."
+            placeholder={error ? error : "Search GitHub username..."}
             _placeholder={{
-              color: colorMode === "light" ? "#697c9a" : "white",
+              color: placeholderColor,
               fontWeight: "400",
             }}
             fontSize="1.8rem"
