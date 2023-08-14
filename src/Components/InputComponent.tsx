@@ -65,6 +65,9 @@ const InputComponent = ({ username, setUsername, getUser }: Props) => {
             fontSize="1.8rem"
             fontWeight="400"
             onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={function (e) {
+              if (e.key === "Enter") getUser();
+            }}
           />
         </InputGroup>
       </Show>
