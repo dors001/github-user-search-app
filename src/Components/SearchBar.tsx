@@ -4,8 +4,6 @@ import { InputGroup, Flex, Spacer } from "@chakra-ui/react";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 
-//TODO: clear search bar after click
-
 export interface User {
   id: number;
   login: string;
@@ -44,7 +42,11 @@ const SearchBar = ({ setUser }: Props) => {
     <>
       <Flex w="100%" maxW="730px" maxH="70px" margin="1.5rem">
         <InputGroup>
-          <InputComponent setUsername={setUsername} username={username}/>
+          <InputComponent
+            setUsername={setUsername}
+            username={username}
+            getUser={getUser}
+          />
           <Spacer />
           <ButtonComponent getUser={getUser} />
         </InputGroup>

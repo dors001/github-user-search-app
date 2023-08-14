@@ -8,7 +8,7 @@ import {
   Heading,
   Flex,
   useColorMode,
-  Icon,
+  Link,
 } from "@chakra-ui/react";
 import theme from "../theme";
 import { User } from "./SearchBar";
@@ -191,7 +191,22 @@ const UseInfoContent = ({ user }: Props) => {
             </Flex>
             <Flex gap={4} marginBottom="1rem">
               {svgIcon(user.blog, Icons.blog)}
-              {socialInfo(user.blog)}
+              {
+                <Link
+                  href={user.blog}
+                  fontSize="1.3rem"
+                  isExternal
+                  color={
+                    user && user.blog !== undefined
+                      ? colorTheme.toString()
+                      : Colors.missingItem
+                  }
+                >
+                  {user && user.blog !== undefined
+                    ? user.blog
+                    : "Not Available"}
+                </Link>
+              }
             </Flex>
             <Flex gap={4} marginBottom="1rem">
               {svgIcon(user.twitter_username, Icons.twitter)}
@@ -281,7 +296,22 @@ const UseInfoContent = ({ user }: Props) => {
               </Flex>
               <Flex gap={4} marginBottom="1rem">
                 {svgIcon(user.blog, Icons.blog)}
-                {socialInfo(user.blog)}
+                {
+                  <Link
+                    href={user.blog}
+                    fontSize="1.3rem"
+                    isExternal
+                    color={
+                      user && user.blog !== undefined
+                        ? colorTheme.toString()
+                        : Colors.missingItem
+                    }
+                  >
+                    {user && user.blog !== undefined
+                      ? user.blog
+                      : "Not Available"}
+                  </Link>
+                }
               </Flex>
             </Box>
             <Box display="inline-block" marginLeft="10rem">

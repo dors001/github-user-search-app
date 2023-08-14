@@ -8,11 +8,12 @@ import {
 } from "@chakra-ui/react";
 
 interface Props {
-  setUsername: (value: string) => void;
   username: string;
+  setUsername: (value: string) => void;
+  getUser: () => void;
 }
 
-const InputComponent = ({ setUsername, username }: Props) => {
+const InputComponent = ({ username, setUsername, getUser }: Props) => {
   const colorMode = useColorMode().colorMode;
 
   return (
@@ -38,6 +39,9 @@ const InputComponent = ({ setUsername, username }: Props) => {
             fontWeight="400"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={function (e) {
+              if (e.key === "Enter") getUser();
+            }}
           />
         </InputGroup>
       </Show>
