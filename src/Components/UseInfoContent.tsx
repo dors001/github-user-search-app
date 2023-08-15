@@ -28,7 +28,7 @@ enum Icons {
   company = "#icon-company",
 }
 
-fetch("./src/assets/sprite.svg")
+fetch("../assets/sprite.svg")
   .then((response) => response.text())
   .then((data) => {
     document.body.insertAdjacentHTML("afterbegin", data);

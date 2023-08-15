@@ -42,8 +42,8 @@ const Header = () => {
             <Image
               src={
                 colorMode === "light"
-                  ? "src/assets/icon-moon.svg"
-                  : "src/assets/icon-sun.svg"
+                  ? "../assets/icon-moon.svg"
+                  : "../assets/icon-sun.svg"
               }
             />
           }

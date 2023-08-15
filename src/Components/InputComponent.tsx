@@ -57,7 +57,7 @@ const InputComponent = ({ username, setUsername, getUser, error }: Props) => {
       <Show breakpoint="(min-width: 768px)">
         <InputGroup>
           <InputLeftElement pointerEvents="none" margin="2.2rem 3rem">
-            <Image src="/src/assets/icon-search.svg" />
+            <Image src="../assets/icon-search.svg" />
           </InputLeftElement>
           <Input
             h="69px"

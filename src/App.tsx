@@ -20,6 +20,7 @@ function App() {
             ? theme.colors.brands.darkColor
             : theme.colors.brands.lightColor
         }
+        style={{ height: "100vh" }}
       >
         <Header />
         <SearchBar setUser={setUser} />

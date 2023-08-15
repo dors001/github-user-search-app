@@ -3,6 +3,7 @@ import "@fontsource/space-mono/400.css";
 import "@fontsource/space-mono/700.css";
 
 const config: ThemeConfig = {
+  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 
@@ -22,7 +23,7 @@ const theme = extendTheme({
     global: {
       "html, body": {
         margin: "0",
-        padding: "0",
+        padding: "",
         fontSize: "62.5%",
       },
     },
